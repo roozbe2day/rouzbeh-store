@@ -1,0 +1,16 @@
+/* GitHub Pages cleanup for the public static export. */
+#wpadminbar,
+#wp-toolbar,
+.admin-bar #wpadminbar {
+  display: none !important;
+}
+
+html.admin-bar,
+html.admin-bar body {
+  margin-top: 0 !important;
+}
+
+body {
+  overflow-x: hidden;
+}
+
