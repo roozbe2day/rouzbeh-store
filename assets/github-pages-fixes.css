@@ -1,0 +1,80 @@
+/* Keep the exported Elementor category mega-menu above the header and fully reachable. */
+.elementor-location-header .elementor-widget-n-menu,
+.elementor-location-header .elementor-widget-mega-menu {
+  position: relative;
+  z-index: 100000;
+}
+.elementor-location-header .e-n-menu-content {
+  position: absolute !important;
+  inset-inline: 0;
+  top: 100%;
+  width: 100%;
+  max-height: calc(100vh - 170px) !important;
+  overflow: auto !important;
+  overscroll-behavior: contain;
+  z-index: 100001 !important;
+}
+.elementor-location-header .e-n-menu-content > .e-con.e-active {
+  display: block !important;
+  max-height: calc(100vh - 170px) !important;
+  overflow: auto !important;
+}
+.elementor-location-header .jet-tabs,
+.elementor-location-header .jet-tabs__control-wrapper,
+.elementor-location-header .jet-tabs__content-wrapper {
+  min-height: 0;
+}
+.elementor-location-header .jet-tabs__control-wrapper {
+  position: relative;
+  z-index: 2;
+}
+@media (max-height: 700px) {
+  .elementor-location-header .e-n-menu-content,
+  .elementor-location-header .e-n-menu-content > .e-con.e-active {
+    max-height: calc(100vh - 150px) !important;
+  }
+}
+/* Preserve the complete artwork on the six homepage hero/side banners. */
+.home .banners-carousel-wrapper .promo-banner-wrapper .banner-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #fff;
+}
+.home .banners-carousel-wrapper .promo-banner-wrapper .banner-image img {
+  display: block;
+  width: 100%;
+  height: auto !important;
+  max-height: 100%;
+  object-fit: contain !important;
+  object-position: center;
+}
+
+/* Explicit JetTabs visibility avoids depending on the live hover-only plugin runtime. */
+.elementor-location-header .jet-tabs__content[hidden] {
+  display: none !important;
+}
+.elementor-location-header .jet-tabs__content.active-content:not([hidden]) {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+.elementor-location-header .jet-tabs__control {
+  cursor: pointer;
+}
+
+/* English homepage: keep every banner's full artwork inside its own image frame. */
+html[lang^="en"] body.home .promo-banner-wrapper .banner-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+}
+html[lang^="en"] body.home .promo-banner-wrapper .banner-image > img {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+}
